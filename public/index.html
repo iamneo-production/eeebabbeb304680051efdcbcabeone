@@ -61,8 +61,29 @@
         this.squares.forEach(squares => squares.draw());
 
         this.canvas.addEventListener('click', function(event){
-          this.click(event)
-        })
+          this.click(event);
+        }.bind(this));
+      }
+
+      click(event){
+        if(this.gameOver){
+          this.reset();
+          return;
+        }
+
+        const x = event.offsetX;
+        const y = event.offsetY;
+
+        for(let square of this.squares){
+          if(square.actor != null) continue;
+
+          if(x >= square.x && x <= square.x + square.width && y >= square.y && y <= square.y + square.height){
+            square.actor = this.actors[this.turn];
+            square.draw();
+
+            this.turn = (this)
+          }
+        }
       }
     }
   </script>
