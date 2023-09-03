@@ -127,16 +127,16 @@
           this.ctx.fillStyle = "black";
           this.ctx.font = "30px Verdana";
           this.ctx.textAlign = "center";
-          this.ctx.fillText(s1.actor + "Draw!", this.canvas.width/2, this.canvas.height/2);
+          this.ctx.fillText("Draw!", this.canvas.width/2, this.canvas.height/2);
         }
+      }
 
-        reset(){
-          this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-          this.squares.forEach(squares => squares.actor = null);
-          this.squares.forEach(squares => squares.draw());
-          this.turn = 0;
-          this.gameOver = false;
-        }
+      reset(){
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.squares.forEach(squares => squares.actor = null);
+        this.squares.forEach(squares => squares.draw());
+        this.turn = 0;
+        this.gameOver = false;
       }
     }
 
