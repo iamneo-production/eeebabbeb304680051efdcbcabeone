@@ -124,9 +124,17 @@
           }
         }
 
-        
+        reset(){
+          this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+          this.squares.forEach(squares => squares.actor = null);
+          this.squares.forEach(squares => squares.draw());
+          this.turn = 0;
+          this.gameOver = false;
+        }
       }
     }
+
+    new TicTacToe('canvas');
   </script>
 </body>
 </html>
