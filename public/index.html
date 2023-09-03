@@ -81,10 +81,14 @@
             square.actor = this.actors[this.turn];
             square.draw();
 
-            this.turn = (this)
+            this.turn = (this.turn + 1)%this.actors.length;
           }
         }
+
+        this.checkForWinner();
       }
+
+      
     }
   </script>
 </body>
