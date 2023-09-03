@@ -113,10 +113,18 @@
 
               this.ctx.beginPath();
               this.ctx.moveTo(s1.x + s1.width/2, s1.y + s1.height/2);
-              this.ctx.line
+              this.ctx.lineTo(s3.x + s3.width/2, s3.y + s3.height/2);
+              this.ctx.stroke();
+
+              this.ctx.fillStyle = 'black';
+              this.ctx.font = '30px Arial';
+              this.ctx.textAlign = "center";
+              this.ctx.fillText(s1.actor + "wins!", this.canvas.width/2, this.canvas.height/2);
             }
           }
         }
+
+        
       }
     }
   </script>
