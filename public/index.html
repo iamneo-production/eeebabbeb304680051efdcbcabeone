@@ -89,7 +89,34 @@
       }
 
       checkForWinner(){
-        const 
+        const winnerCombinations = [
+          [0, 1, 2],
+          [3, 4, 5],
+          [6, 7, 8],
+          [0, 3, 6],
+          [1, 4, 7],
+          [2, 5, 8],
+          [0, 4, 8],
+          [2, 4, 6]
+        ];
+
+        for(let i = 0; i < winnerCombinations.length; i++){
+          let combination = winnerCombinations[i];
+
+          let s1 = this.squares[combination[0]];
+          let s2 = this.squares[combination[1]];
+          let s3 = this.squares[combination[2]];
+
+          if(s1.actor != null){
+            if(s1.actor == s2.actor && s1.actor == s3.actor){
+              this.gameOver = true;
+
+              this.ctx.beginPath();
+              this.ctx.moveTo(s1.x + s1.width/2, s1.y + s1.height/2);
+              this.ctx.line
+            }
+          }
+        }
       }
     }
   </script>
